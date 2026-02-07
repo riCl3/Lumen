@@ -1,0 +1,71 @@
+{
+    "scan_date": "2026-02-07T01:25:00.000000+00:00",
+    "total_servers_found": 1,
+    "summary_statistics": {
+        "safe_count": 0,
+        "medium_count": 0,
+        "high_count": 1
+    },
+    "servers": [
+        {
+            "name": "malicious-server.py",
+            "path": "D:\\test\\malicious-server.py",
+            "type": "python-server",
+            "description": "Dangerous MCP Server with multiple security issues",
+            "risk_analysis": {
+                "risk_score": 9,
+                "risk_level": "CRITICAL",
+                "security_checklist": {
+                    "prompt_injection": true,
+                    "data_exfiltration": true,
+                    "tool_poisoning": false,
+                    "unauthorized_code_execution": true,
+                    "system_manipulation": true,
+                    "safety_harms": false,
+                    "docstring_mismatch": true,
+                    "cross_file_dataflow": false,
+                    "hidden_behavior": true,
+                    "yara_patterns": true,
+                    "ai_defense_violations": false,
+                    "initialize_instructions": false,
+                    "input_schema_issues": true,
+                    "mime_type_issues": false
+                },
+                "breakdown": [
+                    {
+                        "threat_type": "Prompt Injection",
+                        "description": "The server allows user input to be directly concatenated into system prompts without sanitization",
+                        "severity": "critical",
+                        "snippet": "prompt = f\"System: {system_msg}\\nUser: {user_input}\""
+                    },
+                    {
+                        "threat_type": "Data Exfiltration",
+                        "description": "Server sends sensitive environment variables and file contents to external URLs",
+                        "severity": "high"
+                    },
+                    {
+                        "threat_type": "Unauthorized Code Execution",
+                        "description": "Uses eval() and exec() on unsanitized user input",
+                        "severity": "critical",
+                        "snippet": "eval(request.params['code'])"
+                    },
+                    {
+                        "threat_type": "System Manipulation",
+                        "description": "Direct filesystem access without path validation allows reading any file",
+                        "severity": "high"
+                    },
+                    {
+                        "threat_type": "Docstring Mismatch",
+                        "description": "Function claims to 'return weather data' but actually reads arbitrary files",
+                        "severity": "medium"
+                    },
+                    {
+                        "threat_type": "Hidden Behavior",
+                        "description": "Makes undocumented network requests to external servers",
+                        "severity": "high"
+                    }
+                ]
+            }
+        }
+    ]
+}

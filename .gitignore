@@ -74,6 +74,7 @@ docs/_build/
 # PyBuilder
 .pybuilder/
 target/
+mcp-shodan/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -143,7 +144,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
+mcp-server-js
+mcp-shodan
 # Spyder project settings
 .spyderproject
 .spyproject

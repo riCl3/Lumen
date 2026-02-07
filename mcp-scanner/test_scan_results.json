@@ -1,0 +1,10 @@
+{
+  "scan_date": "2026-02-06T19:05:27.928145+00:00",
+  "total_servers_found": 0,
+  "summary_statistics": {
+    "safe_count": 0,
+    "medium_count": 0,
+    "high_count": 0
+  },
+  "servers": []
+}

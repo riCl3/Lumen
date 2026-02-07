@@ -1,0 +1,26 @@
+{
+  "scan_date": "2026-02-06T19:13:27.251870+00:00",
+  "total_servers_found": 1,
+  "summary_statistics": {
+    "safe_count": 0,
+    "medium_count": 0,
+    "high_count": 0
+  },
+  "servers": [
+    {
+      "name": "package.json",
+      "path": "D:\\AlignProject\\Hackathon\\Lumen\\mcp-shodan\\package.json",
+      "type": "node-server",
+      "description": "Node.js MCP Server (No static analysis available)",
+      "risk_analysis": {
+        "risk_score": 0,
+        "risk_level": "ERROR",
+        "breakdown": [
+          {
+            "description": "LLM Analysis failed: Error code: 402 - {'error': {'message': 'Provider returned error', 'code': 402, 'metadata': {'raw': '{\"error\":\"API key USD spend limit exceeded. Your account may still have USD balance, but this API key has reached its configured USD spending limit.\"}', 'provider_name': 'Venice', 'is_byok': False}}, 'user_id': 'user_387OTj7OHTpC8l9YXJyvcUttbub'}"
+          }
+        ]
+      }
+    }
+  ]
+}

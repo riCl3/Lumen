@@ -1,0 +1,89 @@
+{
+  "scan_date": "2026-02-06T14:18:19.453815+00:00",
+  "total_servers_found": 2,
+  "summary_statistics": {
+    "safe_count": 1,
+    "medium_count": 0,
+    "high_count": 1
+  },
+  "servers": [
+    {
+      "name": "example_dangerous_server.py",
+      "path": "examples\\example_dangerous_server.py",
+      "type": "python-server",
+      "description": "Example of a dangerous MCP server using system calls.",
+      "risk_analysis": {
+        "risk_score": 100,
+        "risk_level": "HIGH",
+        "breakdown": [
+          {
+            "category": "DANGEROUS_IMPORTS",
+            "item": "os",
+            "line": 4,
+            "score": 20,
+            "description": "Import/Usage of system module 'os' (+20)"
+          },
+          {
+            "category": "DANGEROUS_IMPORTS",
+            "item": "os",
+            "line": 16,
+            "score": 20,
+            "description": "Import/Usage of system module 'os' (+20)"
+          },
+          {
+            "category": "DANGEROUS_IMPORTS",
+            "item": "subprocess",
+            "line": 5,
+            "score": 20,
+            "description": "Import/Usage of system module 'subprocess' (+20)"
+          },
+          {
+            "category": "DANGEROUS_IMPORTS",
+            "item": "subprocess",
+            "line": 21,
+            "score": 20,
+            "description": "Import/Usage of system module 'subprocess' (+20)"
+          },
+          {
+            "category": "DANGEROUS_IMPORTS",
+            "item": "subprocess",
+            "line": 22,
+            "score": 20,
+            "description": "Import/Usage of system module 'subprocess' (+20)"
+          }
+        ],
+        "imports": [
+          "os",
+          "mcp.server",
+          "subprocess"
+        ],
+        "summary": {
+          "dangerous_imports": 5,
+          "dynamic_execution": 0,
+          "file_operations": 0,
+          "network_calls": 0
+        }
+      }
+    },
+    {
+      "name": "example_safe_server.py",
+      "path": "examples\\example_safe_server.py",
+      "type": "python-server",
+      "description": "Example of a safe MCP server with no dangerous patterns.",
+      "risk_analysis": {
+        "risk_score": 0,
+        "risk_level": "SAFE",
+        "breakdown": [],
+        "imports": [
+          "mcp.server"
+        ],
+        "summary": {
+          "dangerous_imports": 0,
+          "dynamic_execution": 0,
+          "file_operations": 0,
+          "network_calls": 0
+        }
+      }
+    }
+  ]
+}

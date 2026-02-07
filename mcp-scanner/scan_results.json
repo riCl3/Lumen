@@ -1,0 +1,71 @@
+{
+  "scan_date": "2026-02-06T20:35:55.720516+00:00",
+  "total_servers_found": 2,
+  "summary_statistics": {
+    "safe_count": 0,
+    "medium_count": 0,
+    "high_count": 0
+  },
+  "servers": [
+    {
+      "name": "index.ts",
+      "path": "D:\\AlignProject\\Hackathon\\Lumen\\mcp-shodan\\src\\index.ts",
+      "type": "typescript-file",
+      "description": "TypeScript source file",
+      "risk_analysis": {
+        "risk_score": 0,
+        "risk_level": "ERROR",
+        "security_checklist": {
+          "prompt_injection": false,
+          "data_exfiltration": false,
+          "tool_poisoning": false,
+          "unauthorized_code_execution": false,
+          "system_manipulation": false,
+          "safety_harms": false,
+          "docstring_mismatch": false,
+          "cross_file_dataflow": false,
+          "hidden_behavior": false,
+          "yara_patterns": false,
+          "ai_defense_violations": false,
+          "initialize_instructions": false,
+          "input_schema_issues": false,
+          "mime_type_issues": false
+        },
+        "breakdown": [
+          {
+            "threat_type": "Parsing Error",
+            "description": "Failed to parse LLM response: Expecting property name enclosed in double quotes: line 14 column 33 (char 402)",
+            "severity": "low",
+            "snippet": ""
+          }
+        ]
+      }
+    },
+    {
+      "name": "vuln-test.ts",
+      "path": "D:\\AlignProject\\Hackathon\\Lumen\\mcp-shodan\\src\\vuln-test.ts",
+      "type": "typescript-file",
+      "description": "TypeScript source file",
+      "risk_analysis": {
+        "risk_score": 10,
+        "security_checklist": {
+          "ai_defense_violations": true,
+          "cross_file_dataflow": false,
+          "data_exfiltration": true,
+          "docstring_mismatch": false,
+          "hidden_behavior": false,
+          "initialize_instructions": false,
+          "input_schema_issues": true,
+          "mime_type_issues": false,
+          "prompt_injection": false,
+          "safety_harms": false,
+          "system_manipulation": true,
+          "tool_poisoning": false,
+          "unauthorized_code_execution": true,
+          "yara_patterns": true
+        },
+        "risk_level": "CRITICAL"
+      }
+    }
+  ]
+}

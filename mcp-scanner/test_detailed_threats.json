@@ -1,0 +1,62 @@
+{
+    "scan_date": "2026-02-07T01:20:00.000000+00:00",
+    "total_servers_found": 2,
+    "summary_statistics": {
+        "safe_count": 0,
+        "medium_count": 1,
+        "high_count": 1
+    },
+    "servers": [
+        {
+            "name": "dangerous-server.py",
+            "path": "D:\\test\\dangerous-server.py",
+            "type": "python-server",
+            "description": "Python MCP Server with potential security issues",
+            "risk_analysis": {
+                "risk_score": 8,
+                "risk_level": "HIGH",
+                "breakdown": [
+                    {
+                        "threat_type": "Arbitrary File Access",
+                        "description": "Server allows reading any file on the system without proper validation or sanitization",
+                        "severity": "high",
+                        "snippet": "def read_file(path):\n    return open(path, 'r').read()"
+                    },
+                    {
+                        "threat_type": "Command Injection",
+                        "description": "User input is directly passed to shell commands, allowing arbitrary command execution",
+                        "severity": "critical",
+                        "snippet": "os.system(f'ls {user_input}')"
+                    },
+                    {
+                        "threat_type": "Sensitive Data Exposure",
+                        "description": "API keys and secrets are hardcoded in the source code",
+                        "severity": "medium"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "moderate-server.js",
+            "path": "D:\\test\\moderate-server.js",
+            "type": "node-server",
+            "description": "Node.js MCP Server with some concerns",
+            "risk_analysis": {
+                "risk_score": 4,
+                "risk_level": "MEDIUM",
+                "breakdown": [
+                    {
+                        "threat_type": "Weak Input Validation",
+                        "description": "Input parameters are not properly validated before use",
+                        "severity": "medium"
+                    },
+                    {
+                        "threat_type": "Missing Authentication",
+                        "description": "No authentication checks on sensitive endpoints",
+                        "severity": "low"
+                    }
+                ]
+            }
+        }
+    ]
+}
